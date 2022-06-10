@@ -1,5 +1,6 @@
 import toast from "./toast.vue";
 import elements from "./elements.js";
+import events from "./events";
 
 const service = (globalOptions = {}) => {
   return {
@@ -23,6 +24,9 @@ const service = (globalOptions = {}) => {
     warning(message, options = {}) {
       options.type = "warning";
       return this.show(message, options);
+    },
+    clear() {
+      events.$emit("toast-clear");
     },
   };
 };

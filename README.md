@@ -32,8 +32,8 @@ this.$toast.error(`Hey! I'm here`);
 this.$toast.warning(`Hey! I'm here`);
 this.$toast.info(`Hey! I'm here`);
 
-// Close all opened toast after 3000ms
-setTimeout(this.$toast.clear, 3000);
+// Close all opened
+this.$toast.clear();
 ```
 
 ## Available options
