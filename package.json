@@ -1,5 +1,5 @@
 {
-  "name": "vue-toast",
+  "name": "@k90mirzaei/vue-toast",
   "version": "1.0.1",
   "description": "Vue toast notification with tailwindcss",
   "main": "dist/index.js",

@@ -5,7 +5,8 @@ This is a simple vue pluign toast notifier with tailwind
 ## Installation
 
 ```bash
-
+npm i @k90mirzaei/vue-toast
+yarn add @k90mirzaei/vue-toast
 ```
 
 
