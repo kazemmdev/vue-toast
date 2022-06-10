@@ -2,25 +2,69 @@
 
 This is a simple vue pluign toast notifier with tailwind
 
-## Usage
+## Installation
+
+```bash
 
 ```
+
+
+## Import
+
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
-
 
 import toast from 'vue-toast'
 import 'vue-toast/dist/index.css'
 
-let app = createApp(App)
-
-app.use(toast)
-
-app.mount('#app')
+createApp(App).use(toast).mount('#app')
 
 ```
 
+## Usage
 
+```js
+this.$toast.show(`Hey! I'm here`);
+this.$toast.success(`Hey! I'm here`);
+this.$toast.error(`Hey! I'm here`);
+this.$toast.warning(`Hey! I'm here`);
+this.$toast.info(`Hey! I'm here`);
+
+// Close all opened toast after 3000ms
+setTimeout(this.$toast.clear, 3000);
+```
+
+## Available options
+
+The API methods accepts these options:
+
+| Attribute     |      Type       |    Default     | Description                                                                   |
+| :------------ | :-------------: | :------------: | :---------------------------------------------------------------------------- |
+| message       |     String      |       --       | Message text/html (required)                                                  |
+| type          |     String      |   `default`    | One of `success`, `info`, `warning`, `error`, `default`                       |
+| duration      |      Number     |     `4000`     | Visibility duration in milliseconds or `false` that disables duration         |
+| queue         |     Boolean     |    `false`     | Wait for existing to close before showing new                                 |
+| maxToasts     | Number or false |      `5`       | Defines the max of toasts showed in simultaneous                              |
+
+
+## API methods
+
+### `show(message, ?options)`
+
+This is generic method, you can use this method to make any kind of toast.
+
+```js
+// Can accept a message as string and apply rest of options from defaults
+this.$toast.show("Howdy!");
+
+// Can accept an Object of options.
+// If yout don't pass options, the default toast will be showed
+this.$toast.show("Something went wrong!", {
+  type: "error",
+  // all of other options may go here
+});
+```
 
 ## Contributing
 
