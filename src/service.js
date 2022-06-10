@@ -1,10 +1,10 @@
 import toast from "./toast.vue";
-import mount from "./mount.js";
+import elements from "./elements.js";
 
 const service = (globalOptions = {}) => {
   return {
     show(message, options = {}) {
-      return mount(toast, {
+      return elements.mountElement(toast, {
         props: { ...globalOptions, ...{ message, ...options } },
       });
     },

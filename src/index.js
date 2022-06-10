@@ -1,5 +1,6 @@
 import toast from "./toast.vue";
 import service from "./service";
+import "./index.css";
 
 toast.install = (app, options = {}) => {
   let plugin = service(options);

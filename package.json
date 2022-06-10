@@ -2,10 +2,56 @@
   "name": "vue-toast",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Kazem Mirzaei",
+    "url": "https://github.com/k90mirzaei"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "build": "npm run clean && rollup -c && NODE_ENV=production",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.1.0",
+    "vue": "^3.2.37"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "vuejs",
+    "tailwindcss",
+    "tailwindui",
+    "notifications",
+    "toast"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@fullhuman/postcss-purgecss": "^4.1.3",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@vue/compiler-sfc": "^3.2.37",
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "postcss": "^8.4.6",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.2.1",
+    "rollup": "^2.75.6",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "rollup-plugin-vue-inline-svg": "^1.1.2",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^3.1.1",
+    "vue": "^3.2.37",
+    "vue-loader": "^17.0.0",
+    "vue-template-compiler": "^2.6.14"
+  }
 }
