@@ -88,7 +88,6 @@ export default {
       container.appendChild(this.parent);
     },
     shouldNotify() {
-      console.log(this.parent.childElementCount);
       if (this.maxToasts !== false) {
         return this.maxToasts <= this.parent.childElementCount;
       }

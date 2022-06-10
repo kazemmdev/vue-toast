@@ -1,7 +1,7 @@
 {
   "name": "vue-toast",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Vue toast notification with tailwindcss",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
