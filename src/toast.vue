@@ -32,11 +32,15 @@ export default {
       type: Number,
       default: 4000,
     },
+    maxToasts: {
+      type: [Number, Boolean],
+      default: 5,
+    },
   },
   data: () => ({
     parent: null,
-    isActive: false,
     timer: null,
+    queueTimer: null,
     transition: "toast-in",
   }),
   computed: {
@@ -83,9 +87,21 @@ export default {
       const container = document.body;
       container.appendChild(this.parent);
     },
+    shouldNotify() {
+      console.log(this.parent.childElementCount);
+      if (this.maxToasts !== false) {
+        return this.maxToasts <= this.parent.childElementCount;
+      }
+
+      return !this.maxToasts;
+    },
     notify() {
+      if (this.shouldNotify()) {
+        this.queueTimer = setTimeout(this.notify, 250);
+        return;
+      }
+
       this.parent.insertAdjacentElement("afterbegin", this.$el);
-      this.isActive = true;
       this.timer = new Timer(this.close, this.delay);
     },
     click() {
@@ -97,9 +113,10 @@ export default {
       }
     },
     close() {
-      this.timer && this.timer.stop();``
-      this.isActive = false;
+      this.timer && this.timer.stop();
+      clearTimeout(this.queueTimer);
       this.transition = "toast-out";
+
       setTimeout(() => {
         elements.removeElement(this.$el);
       }, 250);
